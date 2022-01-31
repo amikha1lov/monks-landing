@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .container {
+        max-width: 1200px !important;
+        margin: 0 auto;
+    }
+    /*.container {
+       @apply outline outline-1 outline-[red];
+    }
+
+     */
+
+    .menu__link {
+        @apply text-[16px] leading-[24px] text-[#353535] hover:underline hover:underline-offset-[4px] hover:decoration-[#F7CC47] hover:decoration-2;
+    }
+    .tag__link {
+        @apply py-[5px] px-[15px] bg-[#FFFFFF] rounded-[10px] text-[20px] leading-[26p] text-[#585858] block flex items-center justify-center;
+    }
+    .select__divider {
+        @apply w-[12px] h-[39px] bg-[#F5F5F5];
+    }
+    .card {
+        @apply flex flex-col items-start border-r-[2px] border-[#F5F5F5] pr-[20px];
+    }
+    .card__text {
+        @apply font-semibold text-[16px] leading-[21px] text-[#585858] mt-[15px]
+    }
+    .about-badge {
+        @apply flex p-[10px] w-[175px] h-[175px] text-center bg-[#FFFFFF] shadow-about-badge rounded-[30px] absolute;
+    }
+    .about-badge__inner {
+        @apply border-2 border-[#F5F5F5] rounded-[20px] p-[15px] flex flex-col items-center justify-center w-full;
+    }
+    .services-card__descr {
+        @apply hidden text-[16px] leading-[26px] text-[#FFFFFF] mt-[17px];
+    }
+    .services-card__button {
+        @apply hidden py-[15px] w-full font-semibold text-[16px] text-[#FFFFFF] leading-[24px] bg-transparent border-[#F7CC47] border-2 rounded-[100px] text-center hover:bg-[#F7CC47] hover:text-[#353535];
+    }
+    .services-card {
+        @apply shadow-services-card overflow-hidden;
+    }
+}

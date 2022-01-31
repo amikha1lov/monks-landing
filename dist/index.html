@@ -4,10 +4,409 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind-starter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="libs/slimselect/slimselect.min.css">
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
 </head>
 <body>
-<h1 class="text-[45px] bg-[red] text-white">Heading</h1>
+<header>
+    <div class="container py-[40px] flex items-center justify-between">
+        <img src="img/logo.svg" alt="">
+        <nav>
+            <ul class="grid grid-cols-5 gap-x-[50px]">
+                <li><a href="#" class="menu__link">О нас</a></li>
+                <li><a href="#" class="menu__link">Услуги</a></li>
+                <li><a href="#" class="menu__link">Галерея</a></li>
+                <li><a href="#" class="menu__link">Отзывы</a></li>
+                <li><a href="#" class="menu__link">Контаты</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+74942356792" class="font-semibold text-[18px] leading-[27px] text-[#353535]">+7 4942 35 67 92</a>
+    </div>
+</header>
+<main>
+    <section
+            class="mx-[60px] bg-[#F8F6F2] bg-hero bg-no-repeat bg-right-bottom rounded-[30px] pt-[70px] pb-[123px] px-[140px]">
+        <div class="container">
+            <h1 class="max-w-[375px] font-bold text-[60px] leading-[65px] text-[#353535]">Автостекла в Костроме</h1>
+            <ul class="grid grid-cols-4 gap-x-[5px] max-w-[477px] mt-[25px]">
+                <li><a href="#" class="tag__link">Продажа</a></li>
+                <li><a href="#" class="tag__link">Замена</a></li>
+                <li><a href="#" class="tag__link">Ремонт</a></li>
+                <li><a href="#" class="tag__link">Тонировка</a></li>
+            </ul>
 
+            <p class="max-w-[329px] text-[16px] leading-[24px] text-[#585858] mt-[42px]">
+                Профессиональный и качественный сервис, доступный каждому.
+            </p>
+
+        </div>
+
+    </section>
+    <section class="mt-[-35px]">
+        <div class="container bg-[#FFFFFF] rounded-[116px] shadow-selects">
+            <form class="flex items-center justify-between">
+                <div class="flex items-center grow">
+                    <select name="brand" id="brand__select">
+                        <option data-placeholder="true"></option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                    <div class="select__divider"></div>
+                    <select name="model" id="model__select">
+                        <option data-placeholder="true"></option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                    <div class="select__divider"></div>
+                    <select name="body_year" id="body_year__select">
+                        <option data-placeholder="true"></option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                    <div class="select__divider"></div>
+                    <select name="glass_type" id="glass_type__select">
+                        <option data-placeholder="true"></option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                    <div class="select__divider"></div>
+                    <select name="service" id="service__select">
+                        <option data-placeholder="true"></option>
+                        <option value="Чебурашка">Чебурашка</option>
+                        <option value="Крокодил Гена">Крокодил Гена</option>
+                        <option value="Шапокляк">Шапокляк</option>
+                        <option value="Крыса Лариса">Крыса Лариса</option>
+                    </select>
+                </div>
+                <button class="font-semibold text-[16px] leading-[24px] py-[22px] px-[51px] bg-[#C23735] rounded-[116px] text-[#FFFFFF]">
+                    Заказать
+                </button>
+            </form>
+
+
+        </div>
+    </section>
+
+    <section class="mt-[82px]">
+        <div class="container">
+            <ul class="grid grid-cols-6 gap-x-[30px]">
+                <li class="card">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text">Обслуживание по записи в точно назначенное время</p>
+                </li>
+                <li class="card">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text">Охраняемая свободная праковка</p>
+                </li>
+                <li class="card">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text">Широкий ассортимент стекол в наличии</p>
+                </li>
+                <li class="card">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text">Опыт в ремонте и замене стекол 15 лет</p>
+                </li>
+                <li class="card">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text pr-[20px]">Гарантия на работу 10 лет</p>
+                </li>
+                <li class="card border-none">
+                    <img src="img/icon-test.svg" alt="">
+                    <p class="card__text">Комфортабельная клиентская зона</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mt-[230px]">
+        <div class="container grid grid-cols-2 gap-x-[150px]">
+
+            <div class="relative">
+                <div class="about-badge bottom-[107px] left-[-60px]">
+
+                    <div class="about-badge__inner">
+                        <span class="font-bold text-[50px] leading-[50px] text-[#C23735]">10</span>
+                        <p class="font-bold text-[18px] leading-[23px] text-[#C23735]">лет гарантия на работы</p>
+                    </div>
+
+                </div>
+                <img src="img/about.png" alt="">
+                <div class="about-badge top-[55px] right-[0px]">
+                    <div class="about-badge__inner">
+                        <span class="font-bold text-[50px] leading-[50px] text-[#C23735]">15</span>
+                        <p class="font-bold text-[18px] leading-[23px] text-[#C23735]">лет опыта</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mt-[120px]">
+                <h2 class="text-[50px] text-[#353535] leading-[54px] font-bold">О нас</h2>
+                <p class="text-[18px] leading-[29px] text-[#585858] mt-[20px]">
+                    Компания Vip autoglass занимается заменой автомобильных стекол по КАСКО, работаем с большинством
+                    страховых компаний. С недавнего времени вышли на розничный рынок и оказываем услуги по продаже,
+                    замене, ремонту и тонировке автомобильных стекол на автомобилях любой марки.
+                </p>
+
+
+                <a href="#"
+                   class="text-[#585858] text-[16px] leading-[24px] font-semibold px-[51px] py-[25px] border-[#F7CC47] border-2 rounded-[100px] mt-[50px] inline-block">Связаться
+                    с нами</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mx-[60px] bg-[#C23735] rounded-[30px] pt-[120px] pb-[150px] px-[140px] mt-[230px]">
+        <div class="container">
+            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#FFFFFF]">Услуги нашего центра</h2>
+            <p class="text-[18px] leading-[29px] text-center text-[#FFFFFF] mt-[30px]">Описание для текста услуг напишет
+                Леха</p>
+
+            <div class="mt-[60px] grid grid-cols-4 gap-x-[30px]">
+
+                <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <div class="flex flex-col justify-between h-full">
+                        <div>
+                            <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Продажа</h3>
+                            <p class="text-[18px] text-[#FFFFFF] leading-[27px] mt-[5px]">от 5 000 ₽ </p>
+                            <p class="services-card__descr">
+                                Небольшое описание если необходимо об услуге
+                            </p>
+                        </div>
+                        <a href="#" class="services-card__button">Заказать</a>
+                    </div>
+                </div>
+
+                <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <div class="flex flex-col justify-between h-full">
+                        <div>
+                            <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Замена</h3>
+                            <p class="text-[18px] text-[#FFFFFF] leading-[27px] mt-[5px]">от 5 000 ₽ </p>
+                            <p class="services-card__descr">
+                                Небольшое описание если необходимо об услуге
+                            </p>
+                        </div>
+                        <a href="#" class="services-card__button">Заказать</a>
+                    </div>
+                </div>
+
+                <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <div class="flex flex-col justify-between h-full">
+                        <div>
+                            <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Ремонт</h3>
+                            <p class="text-[18px] text-[#FFFFFF] leading-[27px] mt-[5px]">от 5 000 ₽ </p>
+                            <p class="services-card__descr">
+                                Небольшое описание если необходимо об услуге
+                            </p>
+                        </div>
+                        <a href="#" class="services-card__button">Заказать</a>
+                    </div>
+                </div>
+
+                <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <div class="flex flex-col justify-between h-full">
+                        <div>
+                            <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Тонировка</h3>
+                            <p class="text-[18px] text-[#FFFFFF] leading-[27px] mt-[5px]">от 5 000 ₽ </p>
+                            <p class="services-card__descr">
+                                Небольшое описание если необходимо об услуге
+                            </p>
+                        </div>
+                        <a href="#" class="services-card__button">Заказать</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-[230px]">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="grow">
+                    <h2 class="font-bold text-[50px] leading-[54px] text-[#353535]">Галерея</h2>
+                    <p class="text-[#585858] text-[18px] leading-[29px] mt-[20px]">Описание для текста услуг напишет
+                        Леха</p>
+                </div>
+                <div class="gallery-controls grow flex items-center justify-between">
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-button-prev m-[0px] ml-[47px]">
+                        <img src="img/slider__left.svg" alt="">
+                    </div>
+                    <div class="swiper-button-next m-[0px] ml-[20px]">
+                        <img src="img/slider__right.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="swiper gallery mt-[60px]">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/gallery_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/gallery_2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/gallery_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/gallery_2.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-[230px]">
+        <div class="container">
+            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#353535]">Отзывы</h2>
+            <div class="relative">
+                <div class="swiper-button-prev left-[-25px] mt-[-90px] mx-[-5px]">
+                    <img src="img/slider__left.svg" alt="">
+                </div>
+                <div class="swiper-button-next right-[-25px] mt-[-90px] mx-[-5px]">
+                    <img src="img/slider__right.svg" alt="">
+                </div>
+
+                <div class="swiper reviews mt-[80px] pb-[60px]">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide rounded-[30px]">
+                            <div class="bg-[#F8F6F2] rounded-[30px] py-[50px] px-[70px]">
+                                <p class="text-[#585858] text-[18px] leading-[29px]">Компания Vip autoglass занимается
+                                    заменой автомобильных стекол по КАСКО, работаем с большинством страховых компаний. С
+                                    недавнего времени вышли на розничный рынок и оказываем услуги по продаже, замене,
+                                    ремонту и тонировке автомобильных стекол на автомобилях любой марки.</p>
+                                <div class="mt-[22px] flex items-center justify-start">
+                            <span class="font-semibold text-[16px] leading-[21px] text-[#585858]">
+                                Алексей Волгин
+                            </span>
+                                    <time class="ml-[20px] text-[#9E9E9E] text-[16px] leading-[24px]">
+                                        12.03.22
+                                    </time>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide rounded-[30px]">
+                            <div class="bg-[#F8F6F2] rounded-[30px] py-[50px] px-[70px]">
+                                <p class="text-[#585858] text-[18px] leading-[29px]">Компания Vip autoglass занимается
+                                    заменой автомобильных стекол по КАСКО, работаем с большинством страховых компаний. С
+                                    недавнего времени вышли на розничный рынок и оказываем услуги по продаже, замене,
+                                    ремонту и тонировке автомобильных стекол на автомобилях любой марки.</p>
+                                <div class="mt-[22px] flex items-center justify-start">
+                            <span class="font-semibold text-[16px] leading-[21px] text-[#585858]">
+                                Алексей Волгин
+                            </span>
+                                    <time class="ml-[20px] text-[#9E9E9E] text-[16px] leading-[24px]">
+                                        12.03.22
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide rounded-[30px]">
+                            <div class="bg-[#F8F6F2] rounded-[30px] py-[50px] px-[70px]">
+                                <p class="text-[#585858] text-[18px] leading-[29px]">Компания Vip autoglass занимается
+                                    заменой автомобильных стекол по КАСКО, работаем с большинством страховых компаний. С
+                                    недавнего времени вышли на розничный рынок и оказываем услуги по продаже, замене,
+                                    ремонту и тонировке автомобильных стекол на автомобилях любой марки.</p>
+                                <div class="mt-[22px] flex items-center justify-start">
+                            <span class="font-semibold text-[16px] leading-[21px] text-[#585858]">
+                                Алексей Волгин
+                            </span>
+                                    <time class="ml-[20px] text-[#9E9E9E] text-[16px] leading-[24px]">
+                                        12.03.22
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide rounded-[30px]">
+                            <div class="bg-[#F8F6F2] rounded-[30px] py-[50px] px-[70px]">
+                                <p class="text-[#585858] text-[18px] leading-[29px]">Компания Vip autoglass занимается
+                                    заменой автомобильных стекол по КАСКО, работаем с большинством страховых компаний. С
+                                    недавнего времени вышли на розничный рынок и оказываем услуги по продаже, замене,
+                                    ремонту и тонировке автомобильных стекол на автомобилях любой марки.</p>
+                                <div class="mt-[22px] flex items-center justify-start">
+                            <span class="font-semibold text-[16px] leading-[21px] text-[#585858]">
+                                Алексей Волгин
+                            </span>
+                                    <time class="ml-[20px] text-[#9E9E9E] text-[16px] leading-[24px]">
+                                        12.03.22
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-scrollbar-reviews mt-[60px]"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="mt-[170px] bg-[#F8F6F2] rounded-[30px] pt-[120px] pb-[109px] px-[52px]">
+        <div class="container grid grid-cols-2 gap-x-[48px]">
+            <div class="flex items-end">
+                <img src="img/contacts.png" alt="">
+            </div>
+
+            <div class="bg-[#FFFFFF] rounded-[30px] p-[90px]">
+                <h2 class="text-[50px] font-bold leading-[54px] text-[#353535]">Контакты</h2>
+                <p class="mt-[20px] text-[18px] leading-[29px] text-[#585858]">Вы всегда можете приехать к нам</p>
+
+                <ul class="mt-[70px]">
+                    <li class="flex flex-col mb-[30px]">
+                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Телефон:</div>
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">+7 4942 35 67
+                            92</a>
+                    </li>
+                    <li class="flex flex-col mb-[30px]">
+                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">E-mail:</div>
+                        <a href="mailto:reddetailing@mail.ru" class="text-[30px] leading-[45px] text-[#585858]">reddetailing@mail.ru</a>
+                    </li>
+                    <li class="flex flex-col mb-[30px]">
+                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Адрес:</div>
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">Кострома,
+                            Галичская, 116</a>
+                    </li>
+                    <li class="flex flex-col">
+                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Мы в социальных сетях::</div>
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">
+                            social
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="libs/slimselect/slimselect.min.js"></script>
+<script src="libs/swiper/swiper-bundle.min.js"></script>
 <script src="bundle.js"></script>
+<link rel="stylesheet" href="css/custom.css">
 </body>
 </html>
+
+
+
