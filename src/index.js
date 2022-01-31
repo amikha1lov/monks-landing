@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         placeholder:'Услуга'
     })
 
-    var gallery = new Swiper(".gallery", {
-        slidesPerView: 2,
-        spaceBetween: 30,
+    let gallery = new Swiper(".gallery", {
+        slidesPerView: 1,
         scrollbar: {
             el: ".swiper-scrollbar",
 
@@ -41,8 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+        }
     });
-    var reviews = new Swiper(".reviews", {
+    let reviews = new Swiper(".reviews", {
         scrollbar: {
             el: ".swiper-scrollbar-reviews",
 
@@ -52,7 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
             prevEl: ".swiper-button-prev",
         },
     });
+    const menu_open = document.querySelector('.menu_open');
+    const menu_block = document.querySelector('.menu_block');
+    if (menu_open){
 
+        menu_open.addEventListener('click', e => {
+            menu_block.classList.toggle('mobile:block');
+        });
+    }
 
 
 });

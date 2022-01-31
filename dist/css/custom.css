@@ -59,3 +59,12 @@
 .services-card__button:hover {
 
 }
+
+@media (max-width: 768px){
+    .container {
+        padding: 15px;
+    }
+    .hero {
+        background-size: 50%;
+    }
+}

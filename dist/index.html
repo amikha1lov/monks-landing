@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="libs/slimselect/slimselect.min.css">
     <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
 <header>
-    <div class="container py-[40px] flex items-center justify-between">
+    <div class="container py-[40px] flex items-center justify-between tablet:px-[15px]">
         <img src="img/logo.svg" alt="">
-        <nav>
-            <ul class="grid grid-cols-5 gap-x-[50px]">
+        <nav class="mobile:hidden">
+            <ul class="grid grid-cols-5 gap-x-[50px] tablet:gap-x-[15px]">
                 <li><a href="#" class="menu__link">О нас</a></li>
                 <li><a href="#" class="menu__link">Услуги</a></li>
                 <li><a href="#" class="menu__link">Галерея</a></li>
@@ -23,22 +24,47 @@
                 <li><a href="#" class="menu__link">Контаты</a></li>
             </ul>
         </nav>
-        <a href="tel:+74942356792" class="font-semibold text-[18px] leading-[27px] text-[#353535]">+7 4942 35 67 92</a>
+        <a href="tel:+74942356792" class="font-semibold text-[18px] leading-[27px] text-[#353535] mobile:hidden" >+7 4942 35 67 92</a>
+        <div class="relative py-3 sm:max-w-xl hidden mobile:block">
+            <nav x-data="{ open: false }">
+                <button class="text-gray-500 w-10 h-10 relative focus:outline-none bg-white menu_open" @click="open = !open">
+                    <span class="sr-only">Открыть меню</span>
+                    <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">
+                        <span aria-hidden="true" class="block absolute h-[2px] w-[28px] bg-[#3D3D3D] transform transition duration-500 ease-in-out -translate-y-2.5" :class="{'rotate-45': open,' -translate-y-2.5': !open }"></span>
+                        <span aria-hidden="true" class="block absolute h-[2px] w-[28px] bg-[#3D3D3D] transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+                        <span aria-hidden="true" class="block absolute h-[2px] w-[28px] bg-[#3D3D3D] transform transition duration-500 ease-in-out translate-y-2.5" :class="{'-rotate-45': open, ' translate-y-2.5': !open}"></span>
+                    </div>
+                </button>
+            </nav>
+        </div>
+        <div class="menu_block hidden absolute left-[0px] top-[0px] min-w-full min-h-screen bg-[#ffffff] z-10 py-[30px] px-[15px] mobile:mt-[95px]">
+            <div>
+                <ul class="grid grid-cols-1 gap-y-[30px]">
+                    <li><a href="#" class="menu__link">О нас</a></li>
+                    <li><a href="#" class="menu__link">Услуги</a></li>
+                    <li><a href="#" class="menu__link">Галерея</a></li>
+                    <li><a href="#" class="menu__link">Отзывы</a></li>
+                    <li><a href="#" class="menu__link">Контаты</a></li>
+                </ul>
+                <a href="tel:+74942356792" class="font-semibold text-[18px] leading-[27px] text-[#353535] pt-[50px]" >+7 4942 35 67 92</a>
+            </div>
+        </div>
+
     </div>
 </header>
 <main>
-    <section
-            class="mx-[60px] bg-[#F8F6F2] bg-hero bg-no-repeat bg-right-bottom rounded-[30px] pt-[70px] pb-[123px] px-[140px]">
+    <section class="hero mx-[60px] bg-[#F8F6F2] bg-hero bg-no-repeat bg-right-bottom rounded-[30px]
+     pt-[70px] pb-[123px] px-[140px] tablet:mx-[0px] tablet:px-[15px] tablet:py-[50px] tablet:rounded-[0px] mobile:bg-none">
         <div class="container">
-            <h1 class="max-w-[375px] font-bold text-[60px] leading-[65px] text-[#353535]">Автостекла в Костроме</h1>
-            <ul class="grid grid-cols-4 gap-x-[5px] max-w-[477px] mt-[25px]">
+            <h1 class="max-w-[375px] font-bold text-[60px] leading-[65px] text-[#353535] mobile:text-[40px] mobile:max-w-[100%] mobile:text-center">Автостекла в Костроме</h1>
+            <ul class="grid grid-cols-4 gap-x-[5px] max-w-[477px] mt-[25px] mobile:grid-cols-2 mobile:gap-[10px]">
                 <li><a href="#" class="tag__link">Продажа</a></li>
                 <li><a href="#" class="tag__link">Замена</a></li>
                 <li><a href="#" class="tag__link">Ремонт</a></li>
                 <li><a href="#" class="tag__link">Тонировка</a></li>
             </ul>
 
-            <p class="max-w-[329px] text-[16px] leading-[24px] text-[#585858] mt-[42px]">
+            <p class="max-w-[329px] text-[16px] leading-[24px] text-[#585858] mt-[42px] mobile:max-w-[100%] mobile:text-center">
                 Профессиональный и качественный сервис, доступный каждому.
             </p>
 
@@ -46,9 +72,9 @@
 
     </section>
     <section class="mt-[-35px]">
-        <div class="container bg-[#FFFFFF] rounded-[116px] shadow-selects">
-            <form class="flex items-center justify-between">
-                <div class="flex items-center grow">
+        <div class="container bg-[#FFFFFF] rounded-[116px] shadow-selects tablet:rounded-[20px] tablet:w-[80%]">
+            <form class="flex items-center justify-between tablet:flex-col">
+                <div class="flex items-center grow tablet:flex-col tablet:w-full">
                     <select name="brand" id="brand__select">
                         <option data-placeholder="true"></option>
                         <option value="Чебурашка">Чебурашка</option>
@@ -56,7 +82,7 @@
                         <option value="Шапокляк">Шапокляк</option>
                         <option value="Крыса Лариса">Крыса Лариса</option>
                     </select>
-                    <div class="select__divider"></div>
+                    <div class="select__divider mobile:hidden"></div>
                     <select name="model" id="model__select">
                         <option data-placeholder="true"></option>
                         <option value="Чебурашка">Чебурашка</option>
@@ -64,7 +90,7 @@
                         <option value="Шапокляк">Шапокляк</option>
                         <option value="Крыса Лариса">Крыса Лариса</option>
                     </select>
-                    <div class="select__divider"></div>
+                    <div class="select__divider mobile:hidden"></div>
                     <select name="body_year" id="body_year__select">
                         <option data-placeholder="true"></option>
                         <option value="Чебурашка">Чебурашка</option>
@@ -72,7 +98,7 @@
                         <option value="Шапокляк">Шапокляк</option>
                         <option value="Крыса Лариса">Крыса Лариса</option>
                     </select>
-                    <div class="select__divider"></div>
+                    <div class="select__divider mobile:hidden"></div>
                     <select name="glass_type" id="glass_type__select">
                         <option data-placeholder="true"></option>
                         <option value="Чебурашка">Чебурашка</option>
@@ -80,7 +106,7 @@
                         <option value="Шапокляк">Шапокляк</option>
                         <option value="Крыса Лариса">Крыса Лариса</option>
                     </select>
-                    <div class="select__divider"></div>
+                    <div class="select__divider mobile:hidden"></div>
                     <select name="service" id="service__select">
                         <option data-placeholder="true"></option>
                         <option value="Чебурашка">Чебурашка</option>
@@ -89,7 +115,7 @@
                         <option value="Крыса Лариса">Крыса Лариса</option>
                     </select>
                 </div>
-                <button class="font-semibold text-[16px] leading-[24px] py-[22px] px-[51px] bg-[#C23735] rounded-[116px] text-[#FFFFFF]">
+                <button class="font-semibold text-[16px] leading-[24px] py-[22px] px-[51px] bg-[#C23735] rounded-[116px] text-[#FFFFFF] tablet:mt-[50px]">
                     Заказать
                 </button>
             </form>
@@ -100,40 +126,40 @@
 
     <section class="mt-[82px]">
         <div class="container">
-            <ul class="grid grid-cols-6 gap-x-[30px]">
-                <li class="card">
+            <ul class="grid grid-cols-6 gap-x-[30px] tablet:grid-cols-2 tablet:gap-y-[30px]">
+                <li class="card tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text">Обслуживание по записи в точно назначенное время</p>
+                    <p class="card__text tablet:text-center">Обслуживание по записи в точно назначенное время</p>
                 </li>
-                <li class="card">
+                <li class="card tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text">Охраняемая свободная праковка</p>
+                    <p class="card__text tablet:text-center">Охраняемая свободная праковка</p>
                 </li>
-                <li class="card">
+                <li class="card tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text">Широкий ассортимент стекол в наличии</p>
+                    <p class="card__text tablet:text-center">Широкий ассортимент стекол в наличии</p>
                 </li>
-                <li class="card">
+                <li class="card tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text">Опыт в ремонте и замене стекол 15 лет</p>
+                    <p class="card__text tablet:text-center">Опыт в ремонте и замене стекол 15 лет</p>
                 </li>
-                <li class="card">
+                <li class="card tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text pr-[20px]">Гарантия на работу 10 лет</p>
+                    <p class="card__text pr-[20px] tablet:text-center">Гарантия на работу 10 лет</p>
                 </li>
-                <li class="card border-none">
+                <li class="card border-none tablet:items-center tablet:border-none">
                     <img src="img/icon-test.svg" alt="">
-                    <p class="card__text">Комфортабельная клиентская зона</p>
+                    <p class="card__text tablet:text-center">Комфортабельная клиентская зона</p>
                 </li>
             </ul>
         </div>
     </section>
 
-    <section class="mt-[230px]">
-        <div class="container grid grid-cols-2 gap-x-[150px]">
+    <section class="mt-[230px] tablet:mt-[80px]">
+        <div class="container grid grid-cols-2 gap-x-[150px] tablet:grid-cols-1">
 
             <div class="relative">
-                <div class="about-badge bottom-[107px] left-[-60px]">
+                <div class="about-badge bottom-[107px] left-[-60px] tablet:bottom-[30px] tablet:left-[30px]">
 
                     <div class="about-badge__inner">
                         <span class="font-bold text-[50px] leading-[50px] text-[#C23735]">10</span>
@@ -141,8 +167,8 @@
                     </div>
 
                 </div>
-                <img src="img/about.png" alt="">
-                <div class="about-badge top-[55px] right-[0px]">
+                <img src="img/about.png" alt="" class="tablet:w-full">
+                <div class="about-badge top-[55px] right-[0px] tablet:top-[30px] tablet:right-[30px]">
                     <div class="about-badge__inner">
                         <span class="font-bold text-[50px] leading-[50px] text-[#C23735]">15</span>
                         <p class="font-bold text-[18px] leading-[23px] text-[#C23735]">лет опыта</p>
@@ -150,7 +176,7 @@
 
                 </div>
             </div>
-            <div class="mt-[120px]">
+            <div class="mt-[120px] tablet:mt-[50px]">
                 <h2 class="text-[50px] text-[#353535] leading-[54px] font-bold">О нас</h2>
                 <p class="text-[18px] leading-[29px] text-[#585858] mt-[20px]">
                     Компания Vip autoglass занимается заменой автомобильных стекол по КАСКО, работаем с большинством
@@ -167,16 +193,16 @@
         </div>
     </section>
 
-    <section class="mx-[60px] bg-[#C23735] rounded-[30px] pt-[120px] pb-[150px] px-[140px] mt-[230px]">
+    <section class="mx-[60px] bg-[#C23735] rounded-[30px] pt-[120px] pb-[150px] px-[140px] mt-[230px] tablet:mx-[0px] tablet:px-[15px] tablet:py-[50px] tablet:rounded-[0px] tablet:mt-[80px]">
         <div class="container">
-            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#FFFFFF]">Услуги нашего центра</h2>
+            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#FFFFFF] mobile:text-[35px]">Услуги нашего центра</h2>
             <p class="text-[18px] leading-[29px] text-center text-[#FFFFFF] mt-[30px]">Описание для текста услуг напишет
                 Леха</p>
 
-            <div class="mt-[60px] grid grid-cols-4 gap-x-[30px]">
+            <div class="mt-[60px] grid grid-cols-4 gap-x-[30px] tablet:grid-cols-2 tablet:gap-[25px] mobile:grid-cols-1">
 
                 <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
-                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px] tablet:w-full">
                     <div class="flex flex-col justify-between h-full">
                         <div>
                             <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Продажа</h3>
@@ -190,7 +216,7 @@
                 </div>
 
                 <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
-                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px] tablet:w-full">
                     <div class="flex flex-col justify-between h-full">
                         <div>
                             <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Замена</h3>
@@ -204,7 +230,7 @@
                 </div>
 
                 <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
-                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px] tablet:w-full">
                     <div class="flex flex-col justify-between h-full">
                         <div>
                             <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Ремонт</h3>
@@ -218,7 +244,7 @@
                 </div>
 
                 <div class="p-[20px] pb-[35px] bg-[#CC3D3B] rounded-[30px] services-card">
-                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px]">
+                    <img src="img/services_1.png" alt="" class="rounded-[20px] mb-[25px] tablet:w-full">
                     <div class="flex flex-col justify-between h-full">
                         <div>
                             <h3 class="text-[#FFFFFF] text-[24px] font-semibold leading-[31px]">Тонировка</h3>
@@ -235,16 +261,16 @@
         </div>
     </section>
 
-    <section class="mt-[230px]">
+    <section class="mt-[230px] tablet:mt-[80px]">
         <div class="container">
             <div class="flex items-center justify-between">
                 <div class="grow">
-                    <h2 class="font-bold text-[50px] leading-[54px] text-[#353535]">Галерея</h2>
-                    <p class="text-[#585858] text-[18px] leading-[29px] mt-[20px]">Описание для текста услуг напишет
+                    <h2 class="font-bold text-[50px] leading-[54px] text-[#353535] mobile:text-[35px]">Галерея</h2>
+                    <p class="text-[#585858] text-[18px] leading-[29px] mt-[20px] mobile:hidden">Описание для текста услуг напишет
                         Леха</p>
                 </div>
                 <div class="gallery-controls grow flex items-center justify-between">
-                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-scrollbar mobile:hidden"></div>
                     <div class="swiper-button-prev m-[0px] ml-[47px]">
                         <img src="img/slider__left.svg" alt="">
                     </div>
@@ -275,18 +301,18 @@
         </div>
     </section>
 
-    <section class="mt-[230px]">
+    <section class="mt-[230px] tablet:mt-[80px]">
         <div class="container">
-            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#353535]">Отзывы</h2>
+            <h2 class="font-bold text-[50px] leading-[54px] text-center text-[#353535] mobile:text-[35px]">Отзывы</h2>
             <div class="relative">
-                <div class="swiper-button-prev left-[-25px] mt-[-90px] mx-[-5px]">
+                <div class="swiper-button-prev left-[-25px] mt-[-90px] mx-[-5px] tablet:left-[0px]">
                     <img src="img/slider__left.svg" alt="">
                 </div>
-                <div class="swiper-button-next right-[-25px] mt-[-90px] mx-[-5px]">
+                <div class="swiper-button-next right-[-25px] mt-[-90px] mx-[-5px] tablet:right-[0px]">
                     <img src="img/slider__right.svg" alt="">
                 </div>
 
-                <div class="swiper reviews mt-[80px] pb-[60px]">
+                <div class="swiper reviews mt-[80px] pb-[60px] tablet:mt-[40px]">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide rounded-[30px]">
                             <div class="bg-[#F8F6F2] rounded-[30px] py-[50px] px-[70px]">
@@ -355,7 +381,7 @@
                         </div>
 
                     </div>
-                    <div class="swiper-scrollbar-reviews mt-[60px]"></div>
+                    <div class="swiper-scrollbar-reviews mt-[60px] mobile:hidden"></div>
 
                 </div>
 
@@ -363,34 +389,34 @@
 
         </div>
     </section>
-    <section class="mt-[170px] bg-[#F8F6F2] rounded-[30px] pt-[120px] pb-[109px] px-[52px]">
-        <div class="container grid grid-cols-2 gap-x-[48px]">
+    <section class="mt-[170px] bg-[#F8F6F2] rounded-[30px] pt-[120px] pb-[109px] px-[52px] tablet:mt-[80px] mobile:mt-[0px] mobile:p-[15px]">
+        <div class="container grid grid-cols-2 gap-x-[48px] tablet:grid-cols-1">
             <div class="flex items-end">
                 <img src="img/contacts.png" alt="">
             </div>
 
-            <div class="bg-[#FFFFFF] rounded-[30px] p-[90px]">
-                <h2 class="text-[50px] font-bold leading-[54px] text-[#353535]">Контакты</h2>
-                <p class="mt-[20px] text-[18px] leading-[29px] text-[#585858]">Вы всегда можете приехать к нам</p>
+            <div class="bg-[#FFFFFF] rounded-[30px] p-[90px] mobile:p-[30px]">
+                <h2 class="text-[50px] font-bold leading-[54px] text-[#353535] mobile:text-[35px]">Контакты</h2>
+                <p class="mt-[20px] text-[18px] leading-[29px] text-[#585858] mobile:mt-[0px]">Вы всегда можете приехать к нам</p>
 
-                <ul class="mt-[70px]">
+                <ul class="mt-[70px] mobile:mt-[35px]">
                     <li class="flex flex-col mb-[30px]">
                         <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Телефон:</div>
-                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">+7 4942 35 67
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858] mobile:text-[25px]">+7 4942 35 67
                             92</a>
                     </li>
                     <li class="flex flex-col mb-[30px]">
                         <div class="text-[#9E9E9E] text-[16px] leading-[24px]">E-mail:</div>
-                        <a href="mailto:reddetailing@mail.ru" class="text-[30px] leading-[45px] text-[#585858]">reddetailing@mail.ru</a>
+                        <a href="mailto:reddetailing@mail.ru" class="text-[30px] leading-[45px] text-[#585858] mobile:text-[25px]">reddetailing@mail.ru</a>
                     </li>
                     <li class="flex flex-col mb-[30px]">
                         <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Адрес:</div>
-                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">Кострома,
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858] mobile:text-[25px]">Кострома,
                             Галичская, 116</a>
                     </li>
                     <li class="flex flex-col">
-                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Мы в социальных сетях::</div>
-                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858]">
+                        <div class="text-[#9E9E9E] text-[16px] leading-[24px]">Мы в социальных сетях:</div>
+                        <a href="tel:+74942356792" class="text-[30px] leading-[45px] text-[#585858] mobile:text-[25px]">
                             social
                         </a>
                     </li>

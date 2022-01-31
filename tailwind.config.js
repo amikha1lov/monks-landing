@@ -2,6 +2,11 @@ module.exports = {
   mode: 'jit',
   content: ['./dist/*.html'],
   theme: {
+    screens: {
+      'tablet': {'max': '768px'},
+      'mobile': {'max': '480px'},
+      'mobile-mini': {'max': '320px'}
+    },
     extend: {
       boxShadow: {
         'selects': '0px 30px 59px 0px #35353512;',
