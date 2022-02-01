@@ -46,4 +46,7 @@
     .services-card {
         @apply shadow-services-card overflow-hidden;
     }
+    .input {
+        @apply rounded-[50px] bg-[#F8F6F2] text-[16px] leading-[24px] text-[#353535] font-semibold py-[28px] px-[40px] placeholder:text-[#9E9E9E] placeholder:font-normal;
+    }
 }
