@@ -242,4 +242,7 @@ body::-webkit-scrollbar-thumb, .ss-list::-webkit-scrollbar-thumb  {
     .hero {
         background-size: 50%;
     }
+    .ss-main {
+        border-bottom: 1px solid #F5F5F5;
+    }
 }
